@@ -1,0 +1,4 @@
+name: Galaxy
+author: Lucariatias
+version: 1.0.0
+main: me.lucariatias.plugins.galaxy.Galaxy
