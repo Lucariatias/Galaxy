@@ -57,8 +57,10 @@ public class GalaxyTimeFrame extends JFrame {
 		contentPane.add(btnSet);
 		
 		List<String> worldNames = new ArrayList<String>();
-		for (World world : Bukkit.getServer().getWorlds()) {
-			worldNames.add(world.getName());
+		if (Bukkit.getServer() != null) {
+			for (World world : Bukkit.getServer().getWorlds()) {
+				worldNames.add(world.getName());
+			}
 		}
 		comboBoxWorld = new JComboBox(worldNames.toArray());
 		comboBoxWorld.setBounds(6, 8, 438, 27);

@@ -36,8 +36,10 @@ public class GalaxyWhitelistFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		listModel = new DefaultListModel();
-		for (OfflinePlayer player : Bukkit.getServer().getWhitelistedPlayers()) {
-			listModel.addElement(player.getName());
+		if (Bukkit.getServer() != null) {
+			for (OfflinePlayer player : Bukkit.getServer().getWhitelistedPlayers()) {
+				listModel.addElement(player.getName());
+			}
 		}
 		list = new JList(listModel);
 		JScrollPane scrollPane = new JScrollPane(list);

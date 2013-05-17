@@ -111,8 +111,10 @@ public class GalaxyTeleportFrame extends JFrame {
 		contentPane.add(lblWorld);
 		
 		List<String> worldNames = new ArrayList<String>();
-		for (World world : Bukkit.getServer().getWorlds()) {
-			worldNames.add(world.getName());
+		if (Bukkit.getServer() != null) {
+			for (World world : Bukkit.getServer().getWorlds()) {
+				worldNames.add(world.getName());
+			}
 		}
 		comboBoxWorld = new JComboBox(worldNames.toArray());
 		comboBoxWorld.setBounds(79, 86, 191, 27);
