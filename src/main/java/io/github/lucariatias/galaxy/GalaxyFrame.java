@@ -84,7 +84,7 @@ public class GalaxyFrame extends JFrame {
 		
 		for (Planet planet : panel.getPlanets()) {
 			planet.setDiameter(255 - Math.abs(255 - (planet.getX() - panel.offset)) / 2);
-			planet.getButton().setBounds(planet.getX() - planet.getDiameter() / 4 - panel.offset, 184, planet.getDiameter(), 32);
+			planet.getButton().setBounds(planet.getX() - planet.getDiameter() / 32 - panel.offset, 184, planet.getDiameter() / 2, 32);
 			contentPane.setComponentZOrder(planet.getButton(), 0);
 		}
 		contentPane.repaint();
@@ -99,7 +99,7 @@ public class GalaxyFrame extends JFrame {
 			public void stateChanged(ChangeEvent event) {
 				for (Planet planet : panel.getPlanets()) {
 					planet.setDiameter(255 - Math.abs(255 - (planet.getX() - panel.offset)) / 2);
-					planet.getButton().setBounds(planet.getX() - planet.getDiameter() / 4 - panel.offset, 184, planet.getDiameter(), 32);
+					planet.getButton().setBounds(planet.getX() - planet.getDiameter() / 32 - panel.offset, 184, planet.getDiameter() / 2, 32);
 					contentPane.setComponentZOrder(planet.getButton(), 0);
 				}
 				panel.offset = slider.getValue();
