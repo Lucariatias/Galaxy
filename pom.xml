@@ -2,14 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.lucariatias</groupId>
   <artifactId>galaxy</artifactId>
-  <version>1.2.0</version>
+  <version>1.2.1-SNAPSHOT</version>
   <name>Galaxy</name>
   <description>A GUI plugin for Bukkit</description>
   <scm>
     <connection>scm:git:https://github.com/Lucariatias/Galaxy.git</connection>
     <url>https://github.com/Lucariatias/Galaxy</url>
     <developerConnection>scm:git:https://github.com/Lucariatias/Galaxy.git</developerConnection>
-    <tag>v1.2.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <repositories>
     <repository>
