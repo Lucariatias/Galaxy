@@ -1,5 +1,6 @@
 package io.github.lucariatias.galaxy;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.UIManager;
@@ -18,6 +19,10 @@ public class Galaxy extends JavaPlugin {
 	}
 	
 	public void onEnable() {
+		UIManager.put("nimbusBase", Color.BLACK);
+		UIManager.put("nimbusBlueGrey", Color.DARK_GRAY);
+		UIManager.put("control", Color.BLACK);
+		UIManager.put("text", Color.WHITE);
 		try {
 		    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
 		        if ("Nimbus".equals(info.getName())) {
