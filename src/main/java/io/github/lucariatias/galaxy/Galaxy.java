@@ -2,11 +2,16 @@ package io.github.lucariatias.galaxy;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Galaxy extends JavaPlugin {
@@ -19,10 +24,31 @@ public class Galaxy extends JavaPlugin {
 	}
 	
 	public void onEnable() {
-		UIManager.put("nimbusBase", Color.BLACK);
-		UIManager.put("nimbusBlueGrey", Color.DARK_GRAY);
-		UIManager.put("control", Color.BLACK);
-		UIManager.put("text", Color.WHITE);
+		if (getServer() != null) {
+			saveDefaultConfig();
+			File themeDirectory = new File(getDataFolder().getPath() + File.separator + "themes");
+			if (!themeDirectory.exists()) {
+				themeDirectory.mkdir();
+				saveResource("themes/dark.yml", false);
+			}
+			File themeFile = new File(themeDirectory.getPath() + File.separator + getConfig().getString("theme") + ".yml");
+			if (themeFile.exists()) {
+				YamlConfiguration themeConfig = new YamlConfiguration();
+				try {
+					themeConfig.load(themeFile);
+					for (String key : themeConfig.getKeys(false)) {
+						org.bukkit.Color bukkitColor = themeConfig.getColor(key);
+						UIManager.put(key, new Color(bukkitColor.getRed(), bukkitColor.getGreen(), bukkitColor.getBlue()));
+					}
+				} catch (FileNotFoundException exception) {
+					exception.printStackTrace();
+				} catch (IOException exception) {
+					exception.printStackTrace();
+				} catch (InvalidConfigurationException exception) {
+					exception.printStackTrace();
+				}
+			}
+		}
 		try {
 		    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
 		        if ("Nimbus".equals(info.getName())) {

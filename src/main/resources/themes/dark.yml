@@ -1,0 +1,31 @@
+# See http://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary for colours you can set here.
+nimbusBase:
+  ==: Color
+  RED: 0
+  GREEN: 0
+  BLUE: 0
+nimbusBlueGrey:
+  ==: Color
+  RED: 64
+  GREEN: 64
+  BLUE: 64
+control:
+  ==: Color
+  RED: 0
+  GREEN: 0
+  BLUE: 0
+text:
+  ==: Color
+  RED: 255
+  GREEN: 255
+  BLUE: 255
+nimbusLightBackground:
+  ==: Color
+  RED: 128
+  GREEN: 128
+  BLUE: 128
+nimbusSelectionBackground:
+  ==: Color
+  RED: 0
+  GREEN: 0
+  BLUE: 0
