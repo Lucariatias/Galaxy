@@ -2,6 +2,10 @@ package io.github.lucariatias.galaxy;
 
 import java.awt.EventQueue;
 
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.UnsupportedLookAndFeelException;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Galaxy extends JavaPlugin {
@@ -14,6 +18,22 @@ public class Galaxy extends JavaPlugin {
 	}
 	
 	public void onEnable() {
+		try {
+		    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+		        if ("Nimbus".equals(info.getName())) {
+		            UIManager.setLookAndFeel(info.getClassName());
+		            break;
+		        }
+		    }
+		} catch (UnsupportedLookAndFeelException exception) {
+		    exception.printStackTrace();
+		} catch (ClassNotFoundException exception) {
+		    exception.printStackTrace();
+		} catch (InstantiationException exception) {
+		    exception.printStackTrace();
+		} catch (IllegalAccessException exception) {
+		    exception.printStackTrace();
+		}
 		this.openUI();
 	}
 	

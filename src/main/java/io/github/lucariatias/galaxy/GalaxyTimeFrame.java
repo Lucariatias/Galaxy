@@ -21,7 +21,7 @@ public class GalaxyTimeFrame extends JFrame {
 	private static final long serialVersionUID = 4899347347323005132L;
 	
 	private JPanel contentPane;
-	private JComboBox<String> comboBoxWorld;
+	private JComboBox<?> comboBoxWorld;
 	private JSpinner spinner;
 
 	/**
@@ -63,7 +63,7 @@ public class GalaxyTimeFrame extends JFrame {
 				worldNames.add(world.getName());
 			}
 		}
-		comboBoxWorld = new JComboBox<String>((String[]) worldNames.toArray());
+		comboBoxWorld = new JComboBox<Object>(worldNames.toArray());
 		comboBoxWorld.setBounds(6, 8, 438, 27);
 		contentPane.add(comboBoxWorld);
 	}

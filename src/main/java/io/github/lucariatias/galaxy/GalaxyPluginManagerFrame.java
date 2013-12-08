@@ -22,7 +22,7 @@ public class GalaxyPluginManagerFrame extends JFrame {
 	private static final long serialVersionUID = 1213495508043729103L;
 	
 	private JPanel contentPane;
-	private JComboBox<String> comboBox;
+	private JComboBox<?> comboBox;
 
 	/**
 	 * Create the frame.
@@ -41,7 +41,7 @@ public class GalaxyPluginManagerFrame extends JFrame {
 				pluginNames.add(plugin.getName());
 			}
 		}
-		comboBox = new JComboBox<String>((String[]) pluginNames.toArray());
+		comboBox = new JComboBox<Object>(pluginNames.toArray());
 		comboBox.setBounds(6, 6, 438, 27);
 		contentPane.add(comboBox);
 		

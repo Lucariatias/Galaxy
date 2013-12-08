@@ -29,7 +29,7 @@ public class GalaxyGiveFrame extends JFrame {
 	private static final long serialVersionUID = 1770533717458461234L;
 	
 	private JPanel contentPane;
-	private JComboBox<String> materialBox;
+	private JComboBox<Object> materialBox;
 	private JSpinner spinnerData;
 	private JTextField txtPlayer;
 	private JSpinner spinnerAmount;
@@ -57,7 +57,7 @@ public class GalaxyGiveFrame extends JFrame {
 		for (Material material : Material.values()) {
 			materialList.add(material.toString());
 		}
-		materialBox = new JComboBox<String>((String[]) materialList.toArray());
+		materialBox = new JComboBox<Object>(materialList.toArray());
 		materialBox.setSelectedItem(0);
 		materialBox.setBounds(139, 34, 134, 27);
 		contentPane.add(materialBox);

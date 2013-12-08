@@ -21,7 +21,7 @@ public class GalaxyGamemodeFrame extends JFrame {
 	
 	private JPanel contentPane;
 	private JTextField txtPlayer;
-	private JComboBox<String> comboBox;
+	private JComboBox<?> comboBox;
 
 	/**
 	 * Create the frame.
@@ -43,7 +43,7 @@ public class GalaxyGamemodeFrame extends JFrame {
 		for (GameMode gamemode : GameMode.values()) {
 			gamemodes.add(gamemode.toString());
 		}
-		comboBox = new JComboBox<String>((String[]) gamemodes.toArray());
+		comboBox = new JComboBox<Object>(gamemodes.toArray());
 		comboBox.setBounds(152, 8, 163, 27);
 		contentPane.add(comboBox);
 		
