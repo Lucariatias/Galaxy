@@ -1,0 +1,30 @@
+# eclipse
+/.classpath
+/.project
+/.settings
+
+# netbeans
+/nbproject
+
+# intellij
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# maven
+/build.xml
+/target
+
+# vim
+.*.sw[a-p]
+
+# various other potential build files
+/build
+/bin
+/dist
+/manifest.mf
+/MANIFEST.mf
+
+# mac filesystem dust
+.DS_Store

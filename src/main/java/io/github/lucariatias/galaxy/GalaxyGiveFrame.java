@@ -1,4 +1,4 @@
-package me.lucariatias.plugins.galaxy;
+package io.github.lucariatias.galaxy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
