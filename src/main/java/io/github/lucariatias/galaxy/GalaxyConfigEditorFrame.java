@@ -53,6 +53,7 @@ public class GalaxyConfigEditorFrame extends JFrame {
 			while (scanner.hasNextLine()) {
 				textPane.setText(textPane.getText() + scanner.nextLine() + "\n");
 			}
+			scanner.close();
 		} catch (IOException exception) {
 			for (StackTraceElement element : exception.getStackTrace()) {
 				textPane.setText(textPane.getText() + element.toString() + "\n");
@@ -141,6 +142,7 @@ public class GalaxyConfigEditorFrame extends JFrame {
 					while (scanner.hasNextLine()) {
 						textPane.setText(textPane.getText() + scanner.nextLine() + "\n");
 					}
+					scanner.close();
 				} catch (IOException exception) {
 					for (StackTraceElement element : exception.getStackTrace()) {
 						textPane.setText(textPane.getText() + element.toString() + "\n");
