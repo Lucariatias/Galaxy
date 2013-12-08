@@ -29,7 +29,7 @@ public class GalaxyTeleportFrame extends JFrame {
 	private JSpinner spinnerX;
 	private JSpinner spinnerY;
 	private JSpinner spinnerZ;
-	private JComboBox comboBoxWorld;
+	private JComboBox<String> comboBoxWorld;
 
 	/**
 	 * Create the frame.
@@ -116,7 +116,7 @@ public class GalaxyTeleportFrame extends JFrame {
 				worldNames.add(world.getName());
 			}
 		}
-		comboBoxWorld = new JComboBox(worldNames.toArray());
+		comboBoxWorld = new JComboBox<String>((String[]) worldNames.toArray());
 		comboBoxWorld.setBounds(79, 86, 191, 27);
 		contentPane.add(comboBoxWorld);
 	}

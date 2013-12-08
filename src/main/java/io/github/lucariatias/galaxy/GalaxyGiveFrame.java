@@ -16,8 +16,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JEditorPane;
@@ -27,7 +29,7 @@ public class GalaxyGiveFrame extends JFrame {
 	private static final long serialVersionUID = 1770533717458461234L;
 	
 	private JPanel contentPane;
-	private JComboBox materialBox;
+	private JComboBox<String> materialBox;
 	private JSpinner spinnerData;
 	private JTextField txtPlayer;
 	private JSpinner spinnerAmount;
@@ -55,7 +57,7 @@ public class GalaxyGiveFrame extends JFrame {
 		for (Material material : Material.values()) {
 			materialList.add(material.toString());
 		}
-		materialBox = new JComboBox(materialList.toArray());
+		materialBox = new JComboBox<String>((String[]) materialList.toArray());
 		materialBox.setSelectedItem(0);
 		materialBox.setBounds(139, 34, 134, 27);
 		contentPane.add(materialBox);

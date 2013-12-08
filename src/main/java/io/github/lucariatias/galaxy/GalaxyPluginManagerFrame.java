@@ -10,6 +10,7 @@ import javax.swing.JComboBox;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
+
 import javax.swing.JButton;
 
 import java.awt.EventQueue;
@@ -21,7 +22,7 @@ public class GalaxyPluginManagerFrame extends JFrame {
 	private static final long serialVersionUID = 1213495508043729103L;
 	
 	private JPanel contentPane;
-	private JComboBox comboBox;
+	private JComboBox<String> comboBox;
 
 	/**
 	 * Create the frame.
@@ -40,7 +41,7 @@ public class GalaxyPluginManagerFrame extends JFrame {
 				pluginNames.add(plugin.getName());
 			}
 		}
-		comboBox = new JComboBox(pluginNames.toArray());
+		comboBox = new JComboBox<String>((String[]) pluginNames.toArray());
 		comboBox.setBounds(6, 6, 438, 27);
 		contentPane.add(comboBox);
 		

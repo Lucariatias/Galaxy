@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JSpinner;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class GalaxyTimeFrame extends JFrame {
 	private static final long serialVersionUID = 4899347347323005132L;
 	
 	private JPanel contentPane;
-	private JComboBox comboBoxWorld;
+	private JComboBox<String> comboBoxWorld;
 	private JSpinner spinner;
 
 	/**
@@ -62,7 +63,7 @@ public class GalaxyTimeFrame extends JFrame {
 				worldNames.add(world.getName());
 			}
 		}
-		comboBoxWorld = new JComboBox(worldNames.toArray());
+		comboBoxWorld = new JComboBox<String>((String[]) worldNames.toArray());
 		comboBoxWorld.setBounds(6, 8, 438, 27);
 		contentPane.add(comboBoxWorld);
 	}

@@ -21,8 +21,8 @@ public class GalaxyWhitelistFrame extends JFrame {
 	
 	private JPanel contentPane;
 	private JTextField textField;
-	private DefaultListModel listModel;
-	private JList list;
+	private DefaultListModel<String> listModel;
+	private JList<String> list;
 
 	/**
 	 * Create the frame.
@@ -35,13 +35,13 @@ public class GalaxyWhitelistFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		listModel = new DefaultListModel();
+		listModel = new DefaultListModel<String>();
 		if (Bukkit.getServer() != null) {
 			for (OfflinePlayer player : Bukkit.getServer().getWhitelistedPlayers()) {
 				listModel.addElement(player.getName());
 			}
 		}
-		list = new JList(listModel);
+		list = new JList<String>(listModel);
 		JScrollPane scrollPane = new JScrollPane(list);
 		scrollPane.setBounds(6, 6, 147, 225);
 		contentPane.add(scrollPane);
